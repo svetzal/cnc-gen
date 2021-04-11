@@ -4,9 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha **/*_spec.js",
+    "cnc-gen-face": "cnc-gen-face",
+    "cnc-gen-drill": "cnc-gen-drill"
+  },
+  "bin": {
+    "cnc-gen-face": "bin/face.js",
+    "cnc-gen-drill": "bin/drill.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "Stacey Vetzal",
+  "license": "ISC",
+  "dependencies": {
+    "yargs-parser": "^20.2.7"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2"
+  }
 }
