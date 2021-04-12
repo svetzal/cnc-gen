@@ -38,6 +38,12 @@ const args = require('yargs')
         describe: 'total step down amount (mm)',
         type: 'number',
     })
+    .option('sh', {
+        alias: 'helicalStepDownRate',
+        default: DefaultSettings.helicalStepDownRate,
+        describe: 'total step down per helical drill pass (mm)',
+        type: 'number',
+    })
     .option('m', {
         alias: 'safetyMargin',
         default: DefaultSettings.safetyMargin,
