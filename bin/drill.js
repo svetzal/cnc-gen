@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs');
-
 const {createDrillingProgram} = require("../lib/drilling_generator");
 const {DefaultSettings, createSettingsFromArgs} = require("../lib/default_settings");
 const {CommandGenerator} = require("../lib/command_generator");
@@ -35,7 +33,7 @@ const args = require('yargs')
         type: 'number',
     })
     .option('s', {
-        alias: 'stepDown',
+        alias: 'stepDownRate',
         default: DefaultSettings.stepDownRate,
         describe: 'total step down amount (mm)',
         type: 'number',
@@ -52,13 +50,13 @@ const args = require('yargs')
         describe: 'write cnc program to this filename instead of console',
         type: 'string',
     })
-    // Drill
     .option('t', {
         alias: 'toolDiameter',
         default: 6.35,
         describe: 'mill bit diameter (mm)',
         type: 'number',
     })
+    // Drill
     .option('d', {
         alias: 'diameter',
         default: 6.35 * 0.3,
