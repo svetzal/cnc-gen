@@ -1,10 +1,10 @@
 # cnc-gen
 
-USE AT YOUR OWN RISK
+**USE AT YOUR OWN RISK**
 
-Currently, this is capable of generating CNC surface milling tool paths for my Snapmaker A350.
+Currently, this is (barely) capable of generating CNC surface milling tool paths for my Snapmaker A350.
 
-It is a work in progress, you can play with it if you like, but at your own risk.
+It is a work in progress, you can play with it if you like, but at your own risk. My goal is for these tools to grow useful enough that I no longer have to boot some big program like Fusion 360 for utility operations like surfacing or finishing edges.
 
 ## Install for command-line tools
 
