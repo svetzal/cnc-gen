@@ -18,6 +18,10 @@
     "email": "stacey@vetzal.com",
     "url": "https://stacey.vetzal.com/"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svetzal/cnc-gen"
+  },
   "license": "MIT",
   "dependencies": {
     "yargs": "^16.2.0"
