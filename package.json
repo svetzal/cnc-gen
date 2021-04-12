@@ -13,7 +13,11 @@
     "cnc-gen-drill": "bin/drill.js"
   },
   "keywords": ["cnc"],
-  "author": "Stacey Vetzal",
+  "author": {
+    "name": "Stacey Vetzal",
+    "email": "stacey@vetzal.com",
+    "url": "https://stacey.vetzal.com/"
+  },
   "license": "MIT",
   "dependencies": {
     "yargs": "^16.2.0"
