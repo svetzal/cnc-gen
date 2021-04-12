@@ -1,6 +1,6 @@
 {
   "name": "cnc-gen",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Gcode generator for basic CNC operations.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,9 @@
     "cnc-gen-face": "bin/face.js",
     "cnc-gen-drill": "bin/drill.js"
   },
-  "keywords": ["cnc"],
+  "keywords": [
+    "cnc"
+  ],
   "author": {
     "name": "Stacey Vetzal",
     "email": "stacey@vetzal.com",
