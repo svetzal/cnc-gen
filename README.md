@@ -6,6 +6,8 @@ Currently, this is (barely) capable of generating CNC surface milling tool paths
 
 It is a work in progress, you can play with it if you like, but at your own risk. My goal is for these tools to grow useful enough that I no longer have to boot some big program like Fusion 360 for utility operations like surfacing or finishing edges.
 
+I have no other machines to test the generated code against, so use this at your own risk.
+
 ## Install for command-line tools
 
 ```bash

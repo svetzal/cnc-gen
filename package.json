@@ -1,7 +1,7 @@
 {
   "name": "cnc-gen",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gcode generator for basic CNC operations.",
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*_spec.js",
@@ -12,9 +12,9 @@
     "cnc-gen-face": "bin/face.js",
     "cnc-gen-drill": "bin/drill.js"
   },
-  "keywords": [],
+  "keywords": ["cnc"],
   "author": "Stacey Vetzal",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "yargs": "^16.2.0"
   },
