@@ -1,6 +1,6 @@
 {
   "name": "cnc-gen",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Gcode generator for basic CNC operations.",
   "main": "index.js",
   "scripts": {
