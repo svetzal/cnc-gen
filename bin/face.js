@@ -67,11 +67,13 @@ const args = require('yargs')
     // Drill
     .option('w', {
         alias: 'width',
+        demandOption: true,
         describe: 'width to surface - x axis (mm)',
         type: 'number',
     })
     .option('l', {
         alias: 'length',
+        demandOption: true,
         describe: 'length to surface - y axis (mm)',
         type: 'number',
     })
