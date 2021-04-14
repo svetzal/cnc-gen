@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const {commonArgumentParser} = require("../lib/common_argument_parser");
 const {createDrillingProgram} = require("../lib/drilling_generator");
 const {createSettingsFromArgs} = require("../lib/default_settings");
 const {CommandGenerator} = require("../lib/command_generator");
