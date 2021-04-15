@@ -4,7 +4,7 @@ const {commonArgumentParser} = require("../lib/common_argument_parser");
 const {createDrillingProgram} = require("../lib/drilling_generator");
 const {createSettingsFromArgs} = require("../lib/default_settings");
 const {CommandGenerator} = require("../lib/command_generator");
-const {ConsoleWriter, FileWriter, Vector} = require('../lib/utilities');
+const {ConsoleWriter, FileWriter, Vector3} = require('../lib/utilities');
 
 const args = commonArgumentParser()
     .option('d', {
@@ -31,9 +31,9 @@ const main = async (args) => {
     createDrillingProgram(
         writer,
         settings,
-        new CommandGenerator(),
+        new CommandGenerator("cnc-gen drilling"),
         args.toolDiameter,
-        new Vector(0, 0),
+        new Vector3(0, 0, 0),
         args.diameter,
         0 - args.depth,
     );

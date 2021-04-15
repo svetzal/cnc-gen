@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
-const {Vector3} = require("../lib/utilities");
 const {commonArgumentParser} = require("../lib/common_argument_parser");
 const {createSettingsFromArgs} = require("../lib/default_settings");
 const {CommandGenerator} = require("../lib/command_generator");
-const {ConsoleWriter, FileWriter, Vector} = require('../lib/utilities');
+const {ConsoleWriter, FileWriter, Vector, Vector3} = require('../lib/utilities');
 const {createFacingProgram} = require("../lib/facing_generator");
 
 const args = commonArgumentParser()
@@ -42,12 +41,12 @@ const main = async (args) => {
         : new ConsoleWriter();
 
     let size = new Vector(args.width, args.length);
-    let faceOrigin = new Vector(0 - size.x / 2, 0 - size.y / 2);
+    let faceOrigin = new Vector3(0 - size.x / 2, 0 - size.y / 2, 0);
 
     createFacingProgram(
         writer,
         settings,
-        new CommandGenerator(),
+        new CommandGenerator("cnc-gen facing"),
         args.toolDiameter,
         faceOrigin,
         size,
