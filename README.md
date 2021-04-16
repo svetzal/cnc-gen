@@ -42,7 +42,7 @@ Always run a boundary check on the machine before starting any CNC program, to e
 
 If you don't have a chuck to hold a regular drill-bit, you can use this program to bore holes in your stock.
 
-End-mills cannot bore straight down, as they are designed to cut laterally. This program creates a CNC file that wll create the hole with a helical movement pattern, compatible with an end-mill bit.
+End-mills are designed to cut laterally. This program creates a CNC file that wll create the hole with a helical movement pattern, compatible with an end-mill bit.
 
 Set your work origin to the center point for the hole you want to drill.
 
@@ -51,3 +51,14 @@ This command will generate CNC code to create a 4mm hole 10mm deep using a 3.175
 ```bash
 cnc-gen-drill -t 3.175 -d 4 -z 10
 ```
+
+## Contributing
+
+Feel free to fork the repo and issue pull-requests back. Please make sure tests pass first (`npm test`).
+
+From a design standpoint, I'm continuing to make some fairly large structural changes. I'd like things to be more functional / stateless, and I'd like it to be easier to add new patterns (operations) and ultimately to compose patterns.
+
+Please [file any issues you find here](https://github.com/svetzal/cnc-gen/issues).
+
+You can [look any the ongoing work here](https://github.com/svetzal/cnc-gen/projects/1).
+
