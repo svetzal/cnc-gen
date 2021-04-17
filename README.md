@@ -24,7 +24,9 @@ By default, the programs will output the CNC code to the console. If you want to
 
 Set your work origin to the center-point of the area you want to surface.
 
-The following command will create a facing program that will mill a 100mm x 200mm area to a depth of 1mm.
+The following command will create a facing program that will mill a 100mm x 200mm area to a depth of 1mm. Because it runs the tool around the edge of the area you specify, it actually clear an additional 0.5 times your mill size around the 100mm x 200mm area, making the actual area cleared 106.35mm x 206.35mm when using a 6.35mm end mill bit, 3.175mm extra on all 4 sides.
+
+If you need the bit to stay entirely inside your bounds, you need to manually subtract your mill diameter from your dimensions, although it will still go outside by 0.2*6.35mm or 1.27mm when descending in the helical pattern to your target depth. 
 
 ```bash
 cnc-gen-face -w 100 -l 200
