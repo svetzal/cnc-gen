@@ -28,7 +28,8 @@ const args = commonArgumentParser()
     .option('z', {
         alias: 'depth',
         default: 1,
-        describe: 'depth to drill (mm)'
+        describe: 'depth to drill (mm)',
+        type: 'number',
     })
     .help()
     .argv;
