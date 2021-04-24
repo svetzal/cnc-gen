@@ -10,7 +10,8 @@
   },
   "bin": {
     "cnc-gen-face": "bin/face.js",
-    "cnc-gen-drill": "bin/drill.js"
+    "cnc-gen-drill": "bin/drill.js",
+    "cnc-gen-slot": "bin/slot.js",
   },
   "keywords": [
     "cnc"
