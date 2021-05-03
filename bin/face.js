@@ -28,7 +28,7 @@ const args = commonArgumentParser()
     .option('z', {
         alias: 'depth',
         default: 1,
-        describe: 'depth to drill (mm)',
+        describe: 'depth to face (mm)',
         type: 'number',
     })
     .help()
@@ -51,6 +51,7 @@ const main = async (args) => {
         args.toolDiameter,
         faceOrigin,
         size,
+        args.depth,
         args.advanceRate,
     );
 }
