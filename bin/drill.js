@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const {ToolHead} = require("../lib/tool_head");
 const {commonArgumentParser} = require("../lib/common_argument_parser");
 const {createDrillingProgram} = require("../lib/drilling_generator");
 const {createSettingsFromArgs} = require("../lib/default_settings");
@@ -28,13 +29,13 @@ const main = async (args) => {
         ? new FileWriter(args.output)
         : new ConsoleWriter();
 
+    let commandGenerator = new CommandGenerator("cnc-gen drilling");
+    let position = new Vector3(0, 0, 0);
+    const toolHead = new ToolHead(writer, settings, commandGenerator, args.toolDiameter, position);
+
     createDrillingProgram(
-        writer,
-        settings,
-        new CommandGenerator("cnc-gen drilling"),
+        toolHead,
         args.toolDiameter,
-        new Vector3(0, 0, 0),
-        args.diameter,
         0 - args.depth,
     );
 }
