@@ -4,7 +4,7 @@
   "description": "Gcode generator for basic CNC operations.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*_spec.js",
+    "test": "nyc mocha **/*_spec.js",
     "cnc-gen-face": "cnc-gen-face",
     "cnc-gen-drill": "cnc-gen-drill"
   },
@@ -31,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^4.3.4",
-    "mocha": "^8.3.2"
+    "mocha": "^8.3.2",
+    "nyc": "^15.1.0"
   }
 }
