@@ -11,7 +11,7 @@ const args = commonArgumentParser()
     .option('d', {
         alias: 'diameter',
         default: 6.35 * 0.3,
-        describe: 'mill bit diameter (mm)',
+        describe: 'hole diameter (mm)',
         type: 'number',
     })
     .option('z', {
@@ -35,8 +35,8 @@ const main = async (args) => {
 
     createDrillingProgram(
         toolHead,
-        args.toolDiameter,
-        0 - args.depth,
+        args.diameter,
+        args.depth,
     );
 }
 
