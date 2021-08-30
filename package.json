@@ -8,7 +8,7 @@
     "cnc-gen-face": "cnc-gen-face",
     "cnc-gen-drill": "cnc-gen-drill",
     "cnc-gen-m4": "cnc-gen-m4",
-    "cnc-gen-slot": "cnc-gen-slot",
+    "cnc-gen-slot": "cnc-gen-slot"
   },
   "bin": {
     "cnc-gen-face": "bin/face.js",
