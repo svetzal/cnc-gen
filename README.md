@@ -2,7 +2,7 @@
 
 **USE AT YOUR OWN RISK**
 
-Currently, this is (barely) capable of generating CNC surface milling tool paths for my Snapmaker A350.
+Currently, this is (barely) capable of generating a few CNC tool paths for my Snapmaker A350 that fit my workflow.
 
 It is a work in progress, you can play with it if you like, but at your own risk. My goal is for these tools to grow useful enough that I no longer have to boot some big program like Fusion 360 for utility operations like surfacing or finishing edges.
 
@@ -16,7 +16,7 @@ npm install -g cnc-gen
 
 ## Defaults
 
-The default milling bit size for operations is 6.35mm or 1/4".
+The default milling bit size for operations is 3.175mm or 1/8".
 
 By default, the programs will output the CNC code to the console. If you want to write it to a file, be sure to use the `-o filename.cnc` option.
 
