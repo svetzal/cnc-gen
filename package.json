@@ -6,11 +6,14 @@
   "scripts": {
     "test": "nyc mocha **/*_spec.js",
     "cnc-gen-face": "cnc-gen-face",
-    "cnc-gen-drill": "cnc-gen-drill"
+    "cnc-gen-drill": "cnc-gen-drill",
+    "cnc-gen-m4": "cnc-gen-m4",
+    "cnc-gen-slot": "cnc-gen-slot",
   },
   "bin": {
     "cnc-gen-face": "bin/face.js",
     "cnc-gen-drill": "bin/drill.js",
+    "cnc-gen-m4": "bin/m4.js",
     "cnc-gen-slot": "bin/slot.js"
   },
   "keywords": [
