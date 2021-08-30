@@ -7,6 +7,7 @@ const {ConsoleWriter, FileWriter, Vector, Vector3} = require('../lib/utilities')
 const {createFacingProgram} = require("../lib/facing_generator");
 
 const args = commonArgumentParser()
+    .scriptName('face')
     .option('w', {
         alias: 'width',
         demandOption: true,

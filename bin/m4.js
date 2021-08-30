@@ -8,12 +8,12 @@ const {CommandGenerator} = require("../lib/command_generator");
 const {ConsoleWriter, FileWriter, Vector3} = require('../lib/utilities');
 
 const args = commonArgumentParser()
-    .option('h', {
-        alias: 'totalHeight',
+    .option('d', {
+        alias: 'totalDepth',
         default: 12,
-        describe: 'total height of stock, shaft + countersink (mm)'
+        describe: 'total depth of stock, shaft + countersink (mm)'
     })
-    .option('a', {
+    .option('s', {
         alias: 'shaftHeight',
         default: 6,
         describe: 'height of shaft (mm)'
@@ -34,7 +34,7 @@ const main = async (args) => {
 
     createM4CountersunkHole(
         toolHead,
-        args.totalHeight,
+        args.totalDepth,
         args.shaftHeight
     );
 }
