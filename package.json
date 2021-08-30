@@ -30,7 +30,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "yargs": "^16.2.0"
+    "yargs": "^17.1.1"
   },
   "devDependencies": {
     "chai": "^4.3.4",
