@@ -28,7 +28,7 @@ const main = async (args) => {
     let filename = addSuffixToFilename(baseFilename, "surface");
     let writer = new FileWriter(filename);
 
-    console.log(filename);
+    console.log("*** This program is not yet complete, do not use it.");
 
     let size = new Vector(320, 340);
     let faceOrigin = new Vector3(0, 0, 0);
