@@ -1,39 +1,43 @@
 #!/usr/bin/env node
 
-const {commonArgumentParser} = require("../lib/common_argument_parser");
-const {createSettingsFromArgs} = require("../lib/default_settings");
-const {CommandGenerator} = require("../lib/command_generator");
-const {ConsoleWriter, FileWriter, Vector, Vector3} = require('../lib/utilities');
-const {createFacingProgram} = require("../lib/facing_generator");
+const { commonArgumentParser } = require("../lib/common_argument_parser");
+const { createSettingsFromArgs } = require("../lib/default_settings");
+const { CommandGenerator } = require("../lib/command_generator");
+const {
+    ConsoleWriter,
+    FileWriter,
+    Vector,
+    Vector3,
+} = require("../lib/utilities");
+const { createFacingProgram } = require("../lib/facing_generator");
 
 const args = commonArgumentParser()
-    .scriptName('face')
-    .option('w', {
-        alias: 'width',
+    .scriptName("face")
+    .option("w", {
+        alias: "width",
         demandOption: true,
-        describe: 'width to surface - x axis (mm)',
-        type: 'number',
+        describe: "width to surface - x axis (mm)",
+        type: "number",
     })
-    .option('l', {
-        alias: 'length',
+    .option("l", {
+        alias: "length",
         demandOption: true,
-        describe: 'length to surface - y axis (mm)',
-        type: 'number',
+        describe: "length to surface - y axis (mm)",
+        type: "number",
     })
-    .option('v', {
-        alias: 'advanceRate',
+    .option("v", {
+        alias: "advanceRate",
         default: 1,
-        describe: 'amount to advance bit during surfacing per pass (mm)',
-        type: 'number',
+        describe: "amount to advance bit during surfacing per pass (mm)",
+        type: "number",
     })
-    .option('z', {
-        alias: 'depth',
+    .option("z", {
+        alias: "depth",
         default: 1,
-        describe: 'depth to face (mm)',
-        type: 'number',
+        describe: "depth to face (mm)",
+        type: "number",
     })
-    .help()
-    .argv;
+    .help().argv;
 
 const main = async (args) => {
     let settings = createSettingsFromArgs(args);
@@ -53,8 +57,8 @@ const main = async (args) => {
         faceOrigin,
         size,
         args.depth,
-        args.advanceRate,
+        args.advanceRate
     );
-}
+};
 
 main(args);

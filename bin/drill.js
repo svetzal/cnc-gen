@@ -1,26 +1,25 @@
 #!/usr/bin/env node
 
-const {ToolHead} = require("../lib/tool_head");
-const {commonArgumentParser} = require("../lib/common_argument_parser");
-const {createDrillingProgram} = require("../lib/drilling_generator");
-const {createSettingsFromArgs} = require("../lib/default_settings");
-const {CommandGenerator} = require("../lib/command_generator");
-const {ConsoleWriter, FileWriter, Vector3} = require('../lib/utilities');
+const { ToolHead } = require("../lib/tool_head");
+const { commonArgumentParser } = require("../lib/common_argument_parser");
+const { createDrillingProgram } = require("../lib/drilling_generator");
+const { createSettingsFromArgs } = require("../lib/default_settings");
+const { CommandGenerator } = require("../lib/command_generator");
+const { ConsoleWriter, FileWriter, Vector3 } = require("../lib/utilities");
 
 const args = commonArgumentParser()
-    .option('d', {
-        alias: 'diameter',
+    .option("d", {
+        alias: "diameter",
         default: 6.35 * 0.3,
-        describe: 'hole diameter (mm)',
-        type: 'number',
+        describe: "hole diameter (mm)",
+        type: "number",
     })
-    .option('z', {
-        alias: 'depth',
+    .option("z", {
+        alias: "depth",
         default: 1,
-        describe: 'depth to drill (mm)'
+        describe: "depth to drill (mm)",
     })
-    .help()
-    .argv;
+    .help().argv;
 
 const main = async (args) => {
     let settings = createSettingsFromArgs(args);
@@ -31,13 +30,15 @@ const main = async (args) => {
 
     let commandGenerator = new CommandGenerator("cnc-gen drilling");
     let position = new Vector3(0, 0, 0);
-    const toolHead = new ToolHead(writer, settings, commandGenerator, args.toolDiameter, position);
-
-    createDrillingProgram(
-        toolHead,
-        args.diameter,
-        args.depth,
+    const toolHead = new ToolHead(
+        writer,
+        settings,
+        commandGenerator,
+        args.toolDiameter,
+        position
     );
-}
+
+    createDrillingProgram(toolHead, args.diameter, args.depth);
+};
 
 main(args);
