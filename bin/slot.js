@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 
-const { ConsoleWriter } = require("../lib/utilities");
-const { FileWriter } = require("../lib/utilities");
 const { CommandGenerator } = require("../lib/command_generator");
-const { Vector3 } = require("../lib/utilities");
 const { createSlotProgram } = require("../lib/slot_generator");
 const { createSettingsFromArgs } = require("../lib/default_settings");
 const { commonArgumentParser } = require("../lib/common_argument_parser");
+const {FileWriter} = require("../lib/fileWriter");
+const {ConsoleWriter} = require("../lib/consoleWriter");
+const {Vector3} = require("../lib/vector3");
 const args = commonArgumentParser()
     .options("l", {
         alias: "length",

@@ -2,14 +2,11 @@
 
 const { commonArgumentParser } = require("../lib/common_argument_parser");
 const { createSettingsFromArgs } = require("../lib/default_settings");
-const { CommandGenerator } = require("../lib/command_generator");
-const {
-    ConsoleWriter,
-    FileWriter,
-    Vector,
-    Vector3,
-} = require("../lib/utilities");
 const { createFacingProgram } = require("../lib/facing_generator");
+const {FileWriter} = require("../lib/fileWriter");
+const {Vector} = require("../lib/vector");
+const {Vector3} = require("../lib/vector3");
+const {CommandGenerator} = require("../lib/command_generator");
 
 const args = commonArgumentParser()
     .scriptName("wasteboard")

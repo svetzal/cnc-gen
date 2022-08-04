@@ -5,7 +5,9 @@ const { commonArgumentParser } = require("../lib/common_argument_parser");
 const { createDrillingProgram } = require("../lib/drilling_generator");
 const { createSettingsFromArgs } = require("../lib/default_settings");
 const { CommandGenerator } = require("../lib/command_generator");
-const { ConsoleWriter, FileWriter, Vector3 } = require("../lib/utilities");
+const {FileWriter} = require("../lib/fileWriter");
+const {ConsoleWriter} = require("../lib/consoleWriter");
+const {Vector3} = require("../lib/vector3");
 
 const args = commonArgumentParser()
     .option("d", {
