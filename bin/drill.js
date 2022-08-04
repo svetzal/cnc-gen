@@ -12,7 +12,7 @@ const {Vector3} = require("../lib/vector3");
 const args = commonArgumentParser()
     .option("d", {
         alias: "diameter",
-        default: 6.35 * 0.3,
+        default: 4.5,
         describe: "hole diameter (mm)",
         type: "number",
     })
