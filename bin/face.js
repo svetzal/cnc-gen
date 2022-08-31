@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-const { commonArgumentParser } = require("../lib/common_argument_parser");
-const { createSettingsFromArgs } = require("../lib/default_settings");
-const { CommandGenerator } = require("../lib/command_generator");
+const {commonArgumentParser} = require("../lib/common_argument_parser");
+const {createSettingsFromArgs} = require("../lib/default_settings");
+const {CommandGenerator} = require("../lib/command_generator");
 // const {
 //     ConsoleWriter,
 //     FileWriter,
 //     Vector,
 //     Vector3,
 // } = require("../lib/utilities");
-const { createFacingProgram } = require("../lib/facing_generator");
+const {createFacingProgram} = require("../lib/facing_generator");
 const {FileWriter} = require("../lib/fileWriter");
 const {ConsoleWriter} = require("../lib/consoleWriter");
 const {Vector} = require("../lib/vector");
@@ -17,6 +17,11 @@ const {Vector3} = require("../lib/vector3");
 
 const args = commonArgumentParser()
     .scriptName("face")
+    .option("c", {
+        alias: "centre",
+        describe: "origin is centre of face",
+        type: "boolean",
+    })
     .option("w", {
         alias: "width",
         demandOption: true,
@@ -51,7 +56,9 @@ const main = async (args) => {
         : new ConsoleWriter();
 
     let size = new Vector(args.width, args.length);
-    let faceOrigin = new Vector3(0 - size.x / 2, 0 - size.y / 2, 0);
+    let faceOrigin = args.centre ?
+        new Vector3(0 - size.x / 2, 0 - size.y / 2, 0)
+        : new Vector3(0, 0, 0);
 
     createFacingProgram(
         writer,
