@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const { commonArgumentParser } = require("../lib/common_argument_parser");
-const { createSettingsFromArgs } = require("../lib/default_settings");
-const { createFacingProgram } = require("../lib/facing_generator");
+const {commonArgumentParser} = require("../lib/common_argument_parser");
+const {createSettingsFromArgs} = require("../lib/default_settings");
+const {createFacingProgram} = require("../lib/facing_generator");
 const {FileWriter} = require("../lib/fileWriter");
 const {Vector} = require("../lib/vector");
 const {Vector3} = require("../lib/vector3");
@@ -10,6 +10,24 @@ const {CommandGenerator} = require("../lib/command_generator");
 
 const args = commonArgumentParser()
     .scriptName("wasteboard")
+    .option("w", {
+        alias: "width",
+        default: 326,
+        describe: "width to surface - x axis (mm)",
+        type: "number",
+    })
+    .option("l", {
+        alias: "length",
+        default: 357,
+        describe: "length to surface - y axis (mm)",
+        type: "number",
+    })
+    .option("z", {
+        alias: "depth",
+        default: 0.5,
+        describe: "depth to face (mm)",
+        type: "number",
+    })
     .option("v", {
         alias: "advanceRate",
         default: 1,
@@ -29,10 +47,7 @@ const main = async (args) => {
     let filename = addSuffixToFilename(baseFilename, "surface");
     let writer = new FileWriter(filename);
 
-    console.log("*** This program is not yet complete, do not use it.");
-
-    let depth = 1;
-    let size = new Vector(320, 350);
+    let size = new Vector(settings.width, settings.length);
     let faceOrigin = new Vector3(0, 0, 0);
 
     createFacingProgram(
@@ -42,7 +57,7 @@ const main = async (args) => {
         args.toolDiameter,
         faceOrigin,
         size,
-        depth,
+        settings.depth,
         args.advanceRate
     );
 };
